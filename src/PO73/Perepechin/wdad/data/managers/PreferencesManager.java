@@ -1,32 +1,20 @@
 package PO73.Perepechin.wdad.data.managers;
 
+import PO73.Perepechin.wdad.utils.BindedObject;
 import PO73.Perepechin.wdad.utils.PreferencesManagerConstants;
-import org.w3c.dom.Document;
+import PO73.Perepechin.wdad.utils.XmlHelper;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class PreferencesManager {
+public class PreferencesManager extends XmlHelper {
     public static String APPCONFIG_FILE_PATH = "src/PO73/Perepechin/wdad/resources/configuration/appconfig.xml";
     public static List<String> propertyKeys;
     private static PreferencesManager ourInstance = new PreferencesManager();
-
-    private Document document;
 
     private PreferencesManager() {
         propertyKeys = new ArrayList<>();
@@ -37,7 +25,7 @@ public class PreferencesManager {
         propertyKeys.add(PreferencesManagerConstants.USE_CODEBASE_ONLY_KEY);
         propertyKeys.add(PreferencesManagerConstants.CLASS_PROVIDER_KEY);
 
-        parseXML();
+        setXmlFile(new File(APPCONFIG_FILE_PATH));
     }
 
     public static PreferencesManager getInstance() {
@@ -90,7 +78,7 @@ public class PreferencesManager {
     }
 
     public String getProperty(String key) {
-        return getNode(key).getNodeValue();
+        return getNode(key).getTextContent();
     }
 
     public void setProperties(Properties prop) {
@@ -106,18 +94,17 @@ public class PreferencesManager {
 
     public void addBindedObject(String name, String className) {
         Node serverNode = getNode("appconfig.rmi.server");
-        Node bindedObjectNode = document.createTextNode("");
-        ((Element) bindedObjectNode).setAttribute("name", name);
-        ((Element) bindedObjectNode).setAttribute("class", className);
-        serverNode.appendChild(bindedObjectNode);
+        Element bindedObjectElement = getDocument().createElement("bindedobject");
+        bindedObjectElement.setAttribute("name", name);
+        bindedObjectElement.setAttribute("class", className);
+        serverNode.appendChild(bindedObjectElement);
         saveXML();
     }
 
     public void removeBindedObject(String name) {
         Node serverNode = getNode("appconfig.rmi.server");
         List<Node> serverNodeChildNodes = getChildNodes(serverNode);
-        for (int i = 0; i < serverNodeChildNodes.size(); i++) {
-            Node childNode = serverNodeChildNodes.get(i);
+        for (Node childNode : serverNodeChildNodes) {
             if (childNode.getNodeName().equals("bindedobject") &&
                     childNode.getAttributes().getNamedItem("name").getNodeValue().equals(name)) {
                 serverNode.removeChild(childNode);
@@ -126,47 +113,33 @@ public class PreferencesManager {
         saveXML();
     }
 
-    private Node getNode(String path) {
-        String[] pathNodes = path.split(".");
-        Node node = document.getElementsByTagName(pathNodes[0]).item(0);
-        for (int i = 1; i < pathNodes.length; i++) {
-            node = getChildNodes(node).get(0);
-        }
-        return node;
-    }
-
-    private List<Node> getChildNodes(Node node) {
-        ArrayList<Node> childNodes = new ArrayList<>();
-        NodeList nodeList = node.getChildNodes();
-        for (int i = 0; i < nodeList.getLength(); i++) {
-            Node childNode = nodeList.item(i);
-            if (childNode.getNodeType() == Node.ELEMENT_NODE) {
-                childNodes.add(childNode);
+    public List<BindedObject> getBindedObjects() {
+        List<BindedObject> bindedObjects = new ArrayList<>();
+        List<Node> serverNodeChildNodes = getChildNodes(getNode("appconfig.rmi.server"));
+        BindedObject bindedObject;
+        for (Node node : serverNodeChildNodes) {
+            if (node.getNodeName().equals("bindedobject")) {
+                bindedObject = new BindedObject(node.getAttributes().getNamedItem("name").getNodeValue(),
+                        node.getAttributes().getNamedItem("class").getNodeValue());
+                bindedObjects.add(bindedObject);
             }
         }
-        return childNodes;
+
+        return bindedObjects;
     }
 
-    private Node findNode(String name) {
-        return document.getElementsByTagName(name).item(0);
-    }
-
-    private void parseXML() {
-        try {
-            document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File(APPCONFIG_FILE_PATH));
-        } catch (ParserConfigurationException | IOException | SAXException e) {
-            e.printStackTrace();
+    private Node getNode(String path) {
+        String[] pathNodes = path.split("\\.");
+        Node node = getDocument().getElementsByTagName(pathNodes[0]).item(0);
+        for (int i = 1; i < pathNodes.length; i++) {
+            List<Node> childNodes = getChildNodes(node);
+            for (Node childNode : childNodes) {
+                if (childNode.getNodeName().equals(pathNodes[i])) {
+                    node = childNode;
+                    break;
+                }
+            }
         }
-    }
-
-    private void saveXML() {
-        try {
-            Transformer transformer = TransformerFactory.newInstance().newTransformer();
-            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "3");
-            transformer.transform(new DOMSource(document), new StreamResult(new File(APPCONFIG_FILE_PATH)));
-        } catch (TransformerException e) {
-            e.printStackTrace();
-        }
+        return node;
     }
 }

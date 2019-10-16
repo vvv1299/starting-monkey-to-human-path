@@ -29,7 +29,9 @@ public class Server {
 
             stub = UnicastRemoteObject.exportObject(xmlDataManager, port);
             registry.bind(BINDING_NAME, stub);
-            preferencesManager.addBindedObject(BINDING_NAME, stub.getClass().getCanonicalName());
+            preferencesManager.addBindedObject(BINDING_NAME, "PO73.Perepechin.wdad.learn.rmi.XmlDataManager");
+            System.out.println("Server is running");
+            System.out.println("Port: " + port);
         } catch (RemoteException e) {
             System.err.println("Something gone wrong!");
             e.printStackTrace();
