@@ -24,7 +24,7 @@
             <registry>
                 <createregistry>yes</createregistry>
                 <registryaddress>localhost</registryaddress>
-                <registryport>1099</registryport>
+                <registryport>8088</registryport>
             </registry>
         </server>
         <client>
