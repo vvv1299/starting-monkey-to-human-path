@@ -40,7 +40,7 @@ public class Client {
             System.out.println(xmlDataManager.getFlat(building, 3));
             xmlDataManager.addRegistration("Baker Street", 221, 3, registrationToAdd);
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.err.println("Connection error");
         } catch (NotBoundException e) {
             System.err.println("Cannot find binded object");
         }
