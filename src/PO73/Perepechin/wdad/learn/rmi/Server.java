@@ -1,6 +1,7 @@
 package PO73.Perepechin.wdad.learn.rmi;
 
 import PO73.Perepechin.wdad.data.managers.PreferencesManager;
+import PO73.Perepechin.wdad.data.managers.XmlDataManager;
 import PO73.Perepechin.wdad.utils.PreferencesManagerConstants;
 
 import java.rmi.AlreadyBoundException;
@@ -15,13 +16,13 @@ public class Server {
 
     public static void main(String[] args) {
         PreferencesManager preferencesManager = PreferencesManager.getInstance();
-        int port = Integer.parseInt(preferencesManager.getProperty(PreferencesManagerConstants.REGISTRY_PORT_KEY));
-        XmlDataManagerImpl xmlDataManager = new XmlDataManagerImpl();
+        int port = Integer.parseInt(preferencesManager.getProperty(PreferencesManagerConstants.RMI_REGISTRY_PORT_KEY));
+        XmlDataManager xmlDataManager = new XmlDataManager();
         Registry registry;
         Remote stub;
 
         try {
-            if (preferencesManager.getProperty(PreferencesManagerConstants.CREATE_REGISTRY_KEY).equals("yes")) {
+            if (preferencesManager.getProperty(PreferencesManagerConstants.RMI_CREATE_REGISTRY_KEY).equals("yes")) {
                 registry = LocateRegistry.createRegistry(port);
             } else {
                 registry = LocateRegistry.getRegistry(port);

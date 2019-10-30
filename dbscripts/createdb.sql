@@ -115,7 +115,7 @@ CREATE TABLE public."registrations-tariffs" (
 );
 
 
-ALTER TABLE public."registrations-tariffs" OWNER TO postgres;
+ALTER TABLE public.registrations_tariffs OWNER TO postgres;
 
 --
 -- Name: registrations-tariffs_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -136,7 +136,7 @@ ALTER TABLE public."registrations-tariffs_id_seq" OWNER TO postgres;
 -- Name: registrations-tariffs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
-ALTER SEQUENCE public."registrations-tariffs_id_seq" OWNED BY public."registrations-tariffs".id;
+ALTER SEQUENCE public."registrations-tariffs_id_seq" OWNED BY public.registrations_tariffs.id;
 
 
 --
@@ -232,7 +232,7 @@ ALTER TABLE ONLY public.registrations ALTER COLUMN id SET DEFAULT nextval('publi
 -- Name: registrations-tariffs id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public."registrations-tariffs" ALTER COLUMN id SET DEFAULT nextval('public."registrations-tariffs_id_seq"'::regclass);
+ALTER TABLE ONLY public.registrations_tariffs ALTER COLUMN id SET DEFAULT nextval('public."registrations-tariffs_id_seq"'::regclass);
 
 
 --
@@ -299,7 +299,7 @@ COPY public.registrations (id, date, flat_id) FROM stdin;
 -- Data for Name: registrations-tariffs; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."registrations-tariffs" (id, amount, registration_id, tariff_name) FROM stdin;
+COPY public.registrations_tariffs (id, amount, registration_id, tariff_name) FROM stdin;
 5	40.000	1	Холодная вода
 8	20.000	1	Горячая вода
 10	90.000	1	Газ
@@ -423,7 +423,7 @@ ALTER TABLE ONLY public.flats
 -- Name: registrations-tariffs registrations-tariffs_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public."registrations-tariffs"
+ALTER TABLE ONLY public.registrations_tariffs
     ADD CONSTRAINT "registrations-tariffs_pk" PRIMARY KEY (id);
 
 
@@ -471,7 +471,7 @@ ALTER TABLE ONLY public.registrations
 -- Name: registrations-tariffs registration_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public."registrations-tariffs"
+ALTER TABLE ONLY public.registrations_tariffs
     ADD CONSTRAINT registration_id FOREIGN KEY (registration_id) REFERENCES public.registrations(id);
 
 
@@ -487,7 +487,7 @@ ALTER TABLE ONLY public.buildings
 -- Name: registrations-tariffs tariff_name; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public."registrations-tariffs"
+ALTER TABLE ONLY public.registrations_tariffs
     ADD CONSTRAINT tariff_name FOREIGN KEY (tariff_name) REFERENCES public.tariffs(name);
 
 

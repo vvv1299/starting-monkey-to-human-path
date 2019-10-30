@@ -1,4 +1,4 @@
-package PO73.Perepechin.wdad.learn.rmi;
+package PO73.Perepechin.wdad.data.managers;
 
 import PO73.Perepechin.wdad.data.model.Building;
 import PO73.Perepechin.wdad.data.model.Flat;
@@ -8,12 +8,12 @@ import PO73.Perepechin.wdad.learn.xml.XmlTask;
 import java.io.File;
 import java.util.Calendar;
 
-public class XmlDataManagerImpl implements XmlDataManager {
+public class XmlDataManager implements DataManager {
     public static final File XML_FILE = new File("src/PO73/Perepechin/wdad/learn/xml/testHousekeeper.xml");
 
     private XmlTask xml;
 
-    public XmlDataManagerImpl() {
+    public XmlDataManager() {
         xml = new XmlTask();
         xml.setXmlFile(XML_FILE);
     }

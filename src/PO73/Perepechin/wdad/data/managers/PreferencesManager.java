@@ -18,12 +18,19 @@ public class PreferencesManager extends XmlHelper {
 
     private PreferencesManager() {
         propertyKeys = new ArrayList<>();
-        propertyKeys.add(PreferencesManagerConstants.CREATE_REGISTRY_KEY);
-        propertyKeys.add(PreferencesManagerConstants.REGISTRY_ADDRESS_KEY);
-        propertyKeys.add(PreferencesManagerConstants.REGISTRY_PORT_KEY);
-        propertyKeys.add(PreferencesManagerConstants.POLICY_PATH_KEY);
-        propertyKeys.add(PreferencesManagerConstants.USE_CODEBASE_ONLY_KEY);
-        propertyKeys.add(PreferencesManagerConstants.CLASS_PROVIDER_KEY);
+        propertyKeys.add(PreferencesManagerConstants.RMI_CREATE_REGISTRY_KEY);
+        propertyKeys.add(PreferencesManagerConstants.RMI_REGISTRY_ADDRESS_KEY);
+        propertyKeys.add(PreferencesManagerConstants.RMI_REGISTRY_PORT_KEY);
+        propertyKeys.add(PreferencesManagerConstants.RMI_POLICY_PATH_KEY);
+        propertyKeys.add(PreferencesManagerConstants.RMI_USE_CODEBASE_ONLY_KEY);
+        propertyKeys.add(PreferencesManagerConstants.RMI_CLASS_PROVIDER_KEY);
+        propertyKeys.add(PreferencesManagerConstants.DATASOURCE_CLASSNAME_KEY);
+        propertyKeys.add(PreferencesManagerConstants.DATASOURCE_DB_NAME_KEY);
+        propertyKeys.add(PreferencesManagerConstants.DATASOURCE_DRIVER_TYPE_KEY);
+        propertyKeys.add(PreferencesManagerConstants.DATASOURCE_HOST_NAME_KEY);
+        propertyKeys.add(PreferencesManagerConstants.DATASOURCE_PASS_KEY);
+        propertyKeys.add(PreferencesManagerConstants.DATASOURCE_PORT_KEY);
+        propertyKeys.add(PreferencesManagerConstants.DATASOURCE_USER_KEY);
 
         setXmlFile(new File(APPCONFIG_FILE_PATH));
     }

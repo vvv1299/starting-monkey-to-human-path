@@ -1,5 +1,6 @@
 package PO73.Perepechin.wdad.learn.rmi;
 
+import PO73.Perepechin.wdad.data.managers.DataManager;
 import PO73.Perepechin.wdad.data.managers.PreferencesManager;
 import PO73.Perepechin.wdad.data.model.Building;
 import PO73.Perepechin.wdad.data.model.Registration;
@@ -15,10 +16,10 @@ import java.util.Date;
 public class Client {
     public static void main(String[] args) {
         PreferencesManager preferencesManager = PreferencesManager.getInstance();
-        int port = Integer.parseInt(preferencesManager.getProperty(PreferencesManagerConstants.REGISTRY_PORT_KEY));
-        String host = preferencesManager.getProperty(PreferencesManagerConstants.REGISTRY_ADDRESS_KEY);
+        int port = Integer.parseInt(preferencesManager.getProperty(PreferencesManagerConstants.RMI_REGISTRY_PORT_KEY));
+        String host = preferencesManager.getProperty(PreferencesManagerConstants.RMI_REGISTRY_ADDRESS_KEY);
         Registry registry;
-        XmlDataManager xmlDataManager;
+        DataManager xmlDataManager;
 
         try {
             registry = LocateRegistry.getRegistry(host, port);
@@ -29,7 +30,7 @@ public class Client {
                     break;
                 }
             }
-            xmlDataManager = (XmlDataManager) registry.lookup(bindedObjectName);
+            xmlDataManager = (DataManager) registry.lookup(bindedObjectName);
             System.out.println("Client is running");
 
             Building building = new Building("Baker Street", 221);
