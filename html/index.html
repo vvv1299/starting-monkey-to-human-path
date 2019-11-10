@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Housekeeper</title>
+</head>
+<body>
+    <header>
+        <div id="header-logo">
+            <img src="logo.png" width="64" height="64" alt="logo">
+        </div>
+        <div id="header-title">
+            <h1>ТСЖ "Жмышенское"</h1>
+            <h2>Коммунальные услуги</h2>
+        </div>
+        <div id="header-profile">
+            <img id="profile-ico" src="profile.png" width="64" height="64" alt="profile">
+            <div class="profile-label">
+                Светлана<br>Дата: 11.11.2019
+            </div>
+        </div>
+    </header>
+
+    <div id="buttons">
+        <input class="tab-inactive" type="button" value="Дома">
+        <input class="tab-inactive" type="button" value="Счета">
+        <input class="tab-active" type="button" value="Показания">
+    </div>
+
+    <div id="content">
+        <div class="padding-maker">
+            <label>По адресу</label>
+            <br>
+            <select>
+                <option>Ново-Садовая</option>
+                <option>Московское шоссе</option>
+                <option>Революционная</option>
+            </select>
+            <select>
+                <option>54</option>
+                <option>27</option>
+            </select>
+            <select>
+                <option>256</option>
+                <option>512</option>
+                <option>1</option>
+            </select>
+        </div>
+        <div class="padding-maker">
+            <br>
+            <label>По лицевому счёту</label>
+            <br>
+            <input id="registry-name-input" type="text" name="sdt" placeholder="№ счёта или Фамилия">
+
+            <div class="registration">
+                <div class="registration-date-label">Октябрь 2016</div>
+                <div class="time-passed-label">2 дня назад ></div>
+                <div class="amount">Холодная вода: 25.00</div>
+                <div class="amount">Горячая вода: 35.00</div>
+                <br>
+                <div class="amount">Газ: 65.00</div>
+                <div class="amount">Электричество: 50.00</div>
+            </div>
+
+            <div class="registration">
+                <div class="registration-date-label">Сентябрь 2016</div>
+                <div class="time-passed-label">35 дней назад ></div>
+                <div class="amount">Холодная вода: 45.00</div>
+                <div class="amount">Горячая вода: 55.00</div>
+                <br>
+                <div class="amount">Газ: 45.00</div>
+                <div class="amount">Электричество: 70.00</div>
+            </div>
+
+            <div class="registration">
+                <div class="registration-date-label">Август 2016</div>
+                <div class="time-passed-label">></div>
+            </div>
+
+            <div class="registration">
+                <div class="registration-date-label">Июль 2016</div>
+                <div class="time-passed-label">95 дней назад ></div>
+                <div class="amount">Холодная вода: 16.00</div>
+                <div class="amount">Горячая вода: 26.00</div>
+                <br>
+                <div class="amount">Газ: 16.00</div>
+                <div class="amount">Электричество: 142.00</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

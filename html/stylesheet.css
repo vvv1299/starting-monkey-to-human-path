@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+}
+header {
+    padding: 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+h1, h2 {
+    padding: 5px;
+    margin: 0 0;
+}
+select {
+    padding: 0 0;
+    font-size: 15px;
+    border: 1px solid lightgrey;
+}
+label {
+    font-size: 18px;
+}
+
+#registry-name-input {
+    width: 200px;
+    font-size: 15px;
+    border: 1px solid lightgrey;
+}
+#buttons {
+    border: 1px solid lightgrey;
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+#content {
+    border: 1px solid lightgrey;
+    width: 730px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+#header-logo {
+    float: left;
+    margin: 8px;
+    width: 200px;
+    display: inline-block;
+}
+#header-title {
+    text-align: center;
+    display: inline-block;
+}
+#header-profile {
+    float: right;
+    margin: 8px;
+    width: 200px;
+    text-align: center;
+    display: inline-block;
+}
+#profile-ico {
+    display: inline-block;
+    float: left;
+}
+
+.profile-label {
+    font-weight: bold;
+    padding: 13px 0;
+    display: inline-block;
+}
+.tab-active {
+    font-size: 18px;
+    background-color: black;
+    width: 250px;
+    color: white;
+    display: inline-block;
+    border: 1px solid black;
+    margin: 0;
+    height: 40px;
+}
+.tab-inactive {
+    font-size: 18px;
+    background-color: white;
+    width: 250px;
+    color: black;
+    display: inline-block;
+    border: 1px solid lightgrey;
+    margin-right: -4px;
+    height: 40px;
+}
+.registration {
+    border-bottom: 2px solid lightgrey;
+    padding: 10px 0;
+}
+.registration-date-label {
+    padding: 10px 0;
+    font-size: 25px;
+    font-weight: bold;
+    width: 50%;
+    display: inline-block;
+}
+.time-passed-label {
+    padding: 10px 0;
+    color: grey;
+    text-align: right;
+    font-size: 20px;
+    width: 48%;
+    display: inline-block;
+}
+.amount {
+    color: grey;
+    width: 200px;
+    display: inline-block;
+}
+.padding-maker {
+    padding: 0 1px;
+}
