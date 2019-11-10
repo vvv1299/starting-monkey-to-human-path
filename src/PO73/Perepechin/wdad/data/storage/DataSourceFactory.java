@@ -9,7 +9,8 @@ import javax.sql.DataSource;
 public class DataSourceFactory {
     public static DataSource createDataSource() {
         PreferencesManager pref = PreferencesManager.getInstance();
-        return createDataSource(pref.getProperty(PreferencesManagerConstants.DATASOURCE_CLASSNAME_KEY),
+        return createDataSource(
+                pref.getProperty(PreferencesManagerConstants.DATASOURCE_CLASSNAME_KEY),
                 pref.getProperty(PreferencesManagerConstants.DATASOURCE_DRIVER_TYPE_KEY),
                 pref.getProperty(PreferencesManagerConstants.DATASOURCE_HOST_NAME_KEY),
                 Integer.parseInt(pref.getProperty(PreferencesManagerConstants.DATASOURCE_PORT_KEY)),

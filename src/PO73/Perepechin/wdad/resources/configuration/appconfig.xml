@@ -9,10 +9,10 @@
         <!ELEMENT registryaddress (#PCDATA)>  <!-- valid IP X.X.X.X (X=>0-255) or valid host name -->
         <!ELEMENT registryport (#PCDATA)>
         <!ELEMENT bindedobject EMPTY>
-        <!ELEMENT policypath (#PCDATA)>      <!-- FS depended path (absolute or relative) to *.policy file -->
+        <!ELEMENT policypath (#PCDATA)> <!-- FS depended path (absolute or relative) to *.policy file -->
         <!ELEMENT usecodebaseonly (#PCDATA)> <!-- valid values: “yes”, “no” -->
         <!ELEMENT classprovider (#PCDATA)> <!-- valid FS depended path to local directory or *jar file, or URL to *.jar file, containing *.class files -->
-        <!ELEMENT datasource (classname, drivertype, hostName, port, DBName, user, pass)>
+        <!ELEMENT datasource (hostName, port, DBName, user, pass)>
         <!ELEMENT classname (#PCDATA)>
         <!ELEMENT drivertype (#PCDATA)>
         <!ELEMENT hostName (#PCDATA)>
@@ -42,12 +42,10 @@
         <classprovider>http://www.yourhost.free.ru/cp/cp.jar</classprovider>
     </rmi>
     <datasource>
-        <classname></classname>
-        <drivertype></drivertype>
-        <hostName></hostName>
-        <port></port>
-        <DBName></DBName>
-        <user></user>
-        <pass></pass>
+        <hostName>localhost</hostName>
+        <port>5432</port>
+        <DBName>housekeeper</DBName>
+        <user>postgres</user>
+        <pass>windows1000</pass>
     </datasource>
 </appconfig>
