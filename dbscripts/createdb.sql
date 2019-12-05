@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: buildings; Type: TABLE; Schema: public; Owner: postgres
+-- Name: buildings.sql; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.buildings (
@@ -208,7 +208,7 @@ CREATE TABLE public.tariffs (
 ALTER TABLE public.tariffs OWNER TO postgres;
 
 --
--- Name: buildings id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: buildings.sql id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.buildings ALTER COLUMN id SET DEFAULT nextval('public.buildings_id_seq'::regclass);
@@ -243,7 +243,7 @@ ALTER TABLE ONLY public.streets ALTER COLUMN id SET DEFAULT nextval('public.stre
 
 
 --
--- Data for Name: buildings; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: buildings.sql; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.buildings (id, number, street_id) FROM stdin;
@@ -404,7 +404,7 @@ SELECT pg_catalog.setval('public.streets_id_seq', 5, true);
 
 
 --
--- Name: buildings buildings_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: buildings.sql buildings_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.buildings
@@ -476,7 +476,7 @@ ALTER TABLE ONLY public.registrations_tariffs
 
 
 --
--- Name: buildings street; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: buildings.sql street; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.buildings
