@@ -1,8 +1,8 @@
-package PO73.Perepechin.wdad.learn.xml;
+package RPIS72.Voronina.wdad.learn.xml;
 
-import PO73.Perepechin.wdad.data.model.Flat;
-import PO73.Perepechin.wdad.data.model.Registration;
-import PO73.Perepechin.wdad.utils.XmlHelper;
+import RPIS72.Voronina.wdad.data.model.Flat;
+import RPIS72.Voronina.wdad.data.model.Registration;
+import RPIS72.Voronina.wdad.utils.XmlHelper;
 import org.w3c.dom.*;
 
 import javax.xml.transform.OutputKeys;

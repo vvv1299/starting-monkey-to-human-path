@@ -1,7 +1,7 @@
-package PO73.Perepechin.wdad.data.storage;
+package RPIS72.Voronina.wdad.data.storage;
 
-import PO73.Perepechin.wdad.data.managers.PreferencesManager;
-import PO73.Perepechin.wdad.utils.PreferencesManagerConstants;
+import RPIS72.Voronina.wdad.data.managers.PreferencesManager;
+import RPIS72.Voronina.wdad.utils.PreferencesManagerConstants;
 import org.postgresql.jdbc2.optional.SimpleDataSource;
 
 import javax.sql.DataSource;

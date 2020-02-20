@@ -1,4 +1,4 @@
-package PO73.Perepechin.wdad.learn.xml;
+package RPIS72.Voronina.wdad.learn.xml;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -6,7 +6,7 @@ import java.util.List;
 
 public class TestXmlTask {
     public static void main(String[] args) {
-        File xmlFile = new File("src/PO73/Perepechin/wdad/learn/xml/testHousekeeper.xml");
+        File xmlFile = new File("src/RPIS72/Voronina/wdad/learn/xml/testHousekeeper.xml");
 
         XmlTask xmlTask = new XmlTask();
         xmlTask.setXmlFile(xmlFile);

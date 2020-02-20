@@ -1,4 +1,4 @@
-package PO73.Perepechin.wdad.data.model;
+package RPIS72.Voronina.wdad.data.model;
 
 import java.io.Serializable;
 import java.util.Date;

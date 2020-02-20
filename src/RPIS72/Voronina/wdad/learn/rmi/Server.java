@@ -1,8 +1,8 @@
-package PO73.Perepechin.wdad.learn.rmi;
+package RPIS72.Voronina.wdad.learn.rmi;
 
-import PO73.Perepechin.wdad.data.managers.PreferencesManager;
-import PO73.Perepechin.wdad.data.managers.XmlDataManager;
-import PO73.Perepechin.wdad.utils.PreferencesManagerConstants;
+import RPIS72.Voronina.wdad.data.managers.PreferencesManager;
+import RPIS72.Voronina.wdad.data.managers.XmlDataManager;
+import RPIS72.Voronina.wdad.utils.PreferencesManagerConstants;
 
 import java.rmi.AlreadyBoundException;
 import java.rmi.Remote;
@@ -30,7 +30,7 @@ public class Server {
 
             stub = UnicastRemoteObject.exportObject(xmlDataManager, port);
             registry.bind(BINDING_NAME, stub);
-            preferencesManager.addBindedObject(BINDING_NAME, "PO73.Perepechin.wdad.learn.rmi.XmlDataManager");
+            preferencesManager.addBindedObject(BINDING_NAME, "RPIS72.Voronina.wdad.learn.rmi.XmlDataManager");
             System.out.println("Server is running");
             System.out.println("Port: " + port);
         } catch (RemoteException e) {

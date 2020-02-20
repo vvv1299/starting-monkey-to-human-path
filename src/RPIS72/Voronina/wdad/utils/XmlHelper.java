@@ -1,4 +1,4 @@
-package PO73.Perepechin.wdad.utils;
+package RPIS72.Voronina.wdad.utils;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;

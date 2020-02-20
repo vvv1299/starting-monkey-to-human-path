@@ -1,4 +1,4 @@
-package PO73.Perepechin.wdad.utils;
+package RPIS72.Voronina.wdad.utils;
 
 public class BindedObject {
     private String name;

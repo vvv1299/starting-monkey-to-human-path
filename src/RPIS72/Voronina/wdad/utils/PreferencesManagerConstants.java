@@ -1,4 +1,4 @@
-package PO73.Perepechin.wdad.utils;
+package RPIS72.Voronina.wdad.utils;
 
 public interface PreferencesManagerConstants {
     String RMI_CREATE_REGISTRY_KEY = "appconfig.rmi.server.registry.createregistry";

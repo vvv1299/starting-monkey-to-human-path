@@ -1,11 +1,11 @@
-package PO73.Perepechin.wdad.learn.rmi;
+package RPIS72.Voronina.wdad.learn.rmi;
 
-import PO73.Perepechin.wdad.data.managers.DataManager;
-import PO73.Perepechin.wdad.data.managers.PreferencesManager;
-import PO73.Perepechin.wdad.data.model.Building;
-import PO73.Perepechin.wdad.data.model.Registration;
-import PO73.Perepechin.wdad.utils.BindedObject;
-import PO73.Perepechin.wdad.utils.PreferencesManagerConstants;
+import RPIS72.Voronina.wdad.data.managers.DataManager;
+import RPIS72.Voronina.wdad.data.managers.PreferencesManager;
+import RPIS72.Voronina.wdad.data.model.Building;
+import RPIS72.Voronina.wdad.data.model.Registration;
+import RPIS72.Voronina.wdad.utils.BindedObject;
+import RPIS72.Voronina.wdad.utils.PreferencesManagerConstants;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -25,7 +25,7 @@ public class Client {
             registry = LocateRegistry.getRegistry(host, port);
             String bindedObjectName = "";
             for (BindedObject object : preferencesManager.getBindedObjects()) {
-                if (object.getClassName().equals("PO73.Perepechin.wdad.learn.rmi.XmlDataManager")) {
+                if (object.getClassName().equals("RPIS72.Voronina.wdad.learn.rmi.XmlDataManager")) {
                     bindedObjectName = object.getName();
                     break;
                 }

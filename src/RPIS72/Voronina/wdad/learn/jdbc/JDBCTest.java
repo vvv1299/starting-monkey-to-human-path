@@ -1,9 +1,9 @@
-package PO73.Perepechin.wdad.learn.jdbc;
+package RPIS72.Voronina.wdad.learn.jdbc;
 
-import PO73.Perepechin.wdad.data.managers.JDBCDataManager;
-import PO73.Perepechin.wdad.data.model.Building;
-import PO73.Perepechin.wdad.data.model.Flat;
-import PO73.Perepechin.wdad.data.model.Registration;
+import RPIS72.Voronina.wdad.data.managers.JDBCDataManager;
+import RPIS72.Voronina.wdad.data.model.Building;
+import RPIS72.Voronina.wdad.data.model.Flat;
+import RPIS72.Voronina.wdad.data.model.Registration;
 
 import java.util.Date;
 

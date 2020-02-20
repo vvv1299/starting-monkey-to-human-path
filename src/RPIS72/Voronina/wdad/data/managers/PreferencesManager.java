@@ -1,8 +1,8 @@
-package PO73.Perepechin.wdad.data.managers;
+package RPIS72.Voronina.wdad.data.managers;
 
-import PO73.Perepechin.wdad.utils.BindedObject;
-import PO73.Perepechin.wdad.utils.PreferencesManagerConstants;
-import PO73.Perepechin.wdad.utils.XmlHelper;
+import RPIS72.Voronina.wdad.utils.BindedObject;
+import RPIS72.Voronina.wdad.utils.PreferencesManagerConstants;
+import RPIS72.Voronina.wdad.utils.XmlHelper;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 

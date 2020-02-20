@@ -1,9 +1,9 @@
-package PO73.Perepechin.wdad.data.managers;
+package RPIS72.Voronina.wdad.data.managers;
 
-import PO73.Perepechin.wdad.data.model.Building;
-import PO73.Perepechin.wdad.data.model.Flat;
-import PO73.Perepechin.wdad.data.model.Registration;
-import PO73.Perepechin.wdad.learn.xml.XmlTask;
+import RPIS72.Voronina.wdad.data.model.Building;
+import RPIS72.Voronina.wdad.data.model.Flat;
+import RPIS72.Voronina.wdad.data.model.Registration;
+import RPIS72.Voronina.wdad.learn.xml.XmlTask;
 
 import java.io.File;
 import java.util.Calendar;
